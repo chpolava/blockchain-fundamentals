@@ -9,6 +9,7 @@ contract Counter {
     }
 }
 
+// We can deploy library or contract but cannot deploy interface
 interface ICounter {
     function count() external view returns (uint);
 
@@ -18,6 +19,7 @@ interface ICounter {
 //if the network is same for both interface and contract implemented
 
 contract MyContract {
+    // Need to pass the address of the Counter contract address
     function incrementCounter(address _counter) external {
         ICounter(_counter).increment();
     }

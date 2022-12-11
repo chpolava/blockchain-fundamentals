@@ -8,17 +8,27 @@ pragma solidity >=0.7.0 <0.9.0;
 //constructor can't return anything
 
 contract simplecontract{
-     int a;//by default every variable is private
+     // int a;//by default every variable is private
+     uint public a = 50;
+     string public myString = "Hello World";
      
-     constructor(int _a){
+     constructor(uint _a){
           a = _a;//argument to the local variable
      }
 
-     function setValue(int _a) public{
+     function setValue(uint _a) public{
           a = _a;
      }
 
-     function getValue() public view returns(int){
+     function getValue() public view returns(uint){
           return a;
+     }
+
+     function setString(string memory _mystring) public{
+          myString = _mystring;
+     }
+
+     function getString() public view returns(string memory){
+          return myString;
      }
 }
